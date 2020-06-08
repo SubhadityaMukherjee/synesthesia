@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
+    <title>Color Typer</title>
+  </head>
+  <body>
+    <h1>Welcome to Synesthesia</h1>
+    <p>Type anything here. Space to reset. This is word based</p><br>
+
+        <textarea type="text" onkeypress = "return myKeyPress(event)" placeholder="Type here"></textarea>
+<br><br><br><br>
+    <div class="grid">
+      <div class="row">
+          <div class="circle" id = "a"></div>
+          <div class="circle" id = "b"></div>
+          <div class="circle" id = "c"></div>
+          <div class="circle" id = "d"></div>
+          <div class="circle" id = "e"></div>
+          <div class="circle" id = "f"></div>
+          <div class="circle" id = "g"></div>
+          <div class="circle" id = "h"></div>
+      </div>
+      <div class="row">
+
+        <div class="circle" id = "i"></div>
+        <div class="circle" id = "j"></div>
+        <div class="circle" id = "k"></div>
+        <div class="circle" id = "l"></div>
+        <div class="circle" id = "m"></div>
+        <div class="circle" id = "n"></div>
+        <div class="circle" id = "o"></div>
+        <div class="circle" id = "p"></div>
+      </div>
+      <div class="row">
+
+        <div class="circle" id = "q"></div>
+        <div class="circle" id = "r"></div>
+        <div class="circle" id = "s"></div>
+        <div class="circle" id = "t"></div>
+        <div class="circle" id = "u"></div>
+        <div class="circle" id = "v"></div>
+        <div class="circle" id = "w"></div>
+        <div class="circle" id = "x"></div>
+      </div>
+      <div class="row">
+        <div class="circle2"></div>
+        <div class="circle2"></div>
+        <div class="circle2"></div>
+        <div class="circle" id = "y"></div>
+        <div class="circle" id = "z"></div>
+        <div class="circle2"></div>
+        <div class="circle2"></div>
+        <div  class="circle2"></div>
+        <div hidden class="circle" id = " "></div>
+      </div>
+    </div>
+<br><br><br><br><br><br>
+
+    <script type="text/javascript">
+
+    function myKeyPress(e){
+    var keynum;
+var alpha = "abcdefghijklmnopqrstuvwxyz ".split("");
+    if(window.event) { // IE
+      keynum = e.keyCode;
+    } else if(e.which){ // Netscape/Firefox/Opera
+      keynum = e.which;
+    }
+    var current = String.fromCharCode(keynum);
+    if( current == " "){
+        var itemsWithoutCurrent = alpha.filter(function(x) { return x !== current; });
+      for (i in itemsWithoutCurrent){
+        document.getElementById(itemsWithoutCurrent[i]).style.backgroundColor = "#bbb";
+      }
+
+    }else{
+    document.getElementById(current).style.backgroundColor = getRandomColor();
+
+
+}
+  }
+    function getRandomColor() {
+      // console.log("lo");
+      var letters = '0123456789ABCDEF';
+      var color = '#';
+      for (var i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+      }
+      return color;
+    }
+
+    </script>
+
+  </body>
+</html>

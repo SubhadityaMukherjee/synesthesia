@@ -1,0 +1,23 @@
+.circle{border:0px solid black;border-radius:50%;width:5%;float:left;margin:0;padding:0;padding-top:5%; background-color: #bbb;}
+.row{clear:left;}
+.circle2{border:0px solid black;border-radius:50%;width:5%;float:left;margin:0;padding:0;padding-top:5%; background-color: #fff;}
+h1{
+  text-align: center;
+}
+.row{
+  text-align: center;
+    margin-left: 35%;
+}
+body{
+  text-align: center;
+  /* display: inline-block; */
+
+
+}
+textarea{
+border: 2 px solid black;
+width: 400px;
+height: 200px;
+resize: none;
+
+}
